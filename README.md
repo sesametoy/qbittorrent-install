@@ -1,33 +1,82 @@
-rutorrent-auto-installer-centos
+qbittorrent installer centos7
+===============================
+```
+#yum install -y epel-release
+
+#yum update -y
+
+#yum install -y qbittorrent-nox
+```
 ===============================
 
-ruTorrent Auto Installer Script for CentOS and Debian/Ubuntu
+qbittorrent installer centos7
+===============================
+```
+#yum install -y epel-release
 
-This auto installer was initially found in here:
-http://sourceforge.net/projects/autodl-irssi/files/autodl-setup/download
+#yum update -y
 
-However it's no longer updated by it's original author, and most of the SVNs were outdated which broke the installation.
-So I decided to fix the urls and add it in here.
-
-How to run and install instructions:
-http://www.tech-and-dev.com/2013/04/installing-rutorrent-on-centos-and-debian.html
-
+#yum install -y qbittorrent-nox
+```
 ===============================
 
-Note for CentOS 7:
+首先执行qbittorrent程序
+===============================
+```
+#qbittorrent-nox 
+
+Press 'y' key to accept and continue...
+```
+按 y
+===============================
+
+设置开机启动
+===============================
+```
+#vi /usr/lib/systemd/system/qbittorrent.service
+
+[Unit]
+
+Description=qbittorrent torrent server
+
+[Service]
+
+User=root
+
+ExecStart=/usr/bin/qbittorrent-nox
+
+Restart=on-abort
+
+[Install]
+
+WantedBy=multi-user.target
+
+systemctl daemon-reload
+
+systemctl restart qbittorrent
+
+systemctl enable qbittorrent
+```
+===============================
+
+设置qbittorrent 参数
+===============================
+```
+# .config/qBittorrent/qBittorent.conf
+```
+===============================
+
+
+
+打开防火墙
 ==================
-Apache and mod_scgi does not work well on CentOS 7 yet. If you are on CentOS 7 You should choose nginx while installing.
+```
+#firewall-cmd --zone=public --add-port=8080/tcp --permanent
 
-And make sure to allow the http/https ports in the firewall:
+#firewall-cmd --zone=public --add-port=8080/udp --permanent
 
-sudo firewall-cmd --permanent --zone=public --add-service=http
+#firewall-cmd --reload
 
-sudo firewall-cmd --permanent --zone=public --add-service=https
-
-sudo firewall-cmd --permanent --zone=public --add-port=80/tcp
-
-sudo firewall-cmd --permanent --zone=public --add-port=443/tcp
-
-sudo firewall-cmd --reload
+#sudo firewall-cmd --reload
 
 ===============================
