@@ -40,10 +40,10 @@ dht-enabled: false
 # mkdir movie tvshow action seeds
 
 # vi /etc/fstab
-192.168.1.XX:/Home_Store_30T/30TZFS/Video/Movie /mnt/download/movie nfs4 rw,hard,intr,proto=tcp     0 0
-192.168.1.XX:/Home_Store_30T/30TZFS/Video/TV_Series /mnt/download/tvshow nfs4 rw,hard,intr,proto=tcp     0 0
-192.168.1.XX:/Home_Store_30T/30TZFS/Download/Action /mnt/download/action nfs4 rw,hard,intr,proto=tcp     0 0
-192.168.1.XX:/Home_Store_30T/30TZFS/Download/seeds /mnt/download/seeds nfs4 rw,hard,intr,proto=tcp     0 0
+192.168.1.XX:/Home30T/30TZFS/Video/Movie /mnt/download/movie nfs4 rw,hard,intr,proto=tcp     0 0
+192.168.1.XX:/Home30T/30TZFS/Video/TV_Series /mnt/download/tvshow nfs4 rw,hard,intr,proto=tcp     0 0
+192.168.1.XX:/Home30T/30TZFS/Download/Action /mnt/download/action nfs4 rw,hard,intr,proto=tcp     0 0
+192.168.1.XX:/Home30T/30TZFS/Download/seeds /mnt/download/seeds nfs4 rw,hard,intr,proto=tcp     0 0
 
 ```
 ===============================
