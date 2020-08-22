@@ -55,6 +55,7 @@ dht-enabled: false
 # pip install --upgrade pip
 # pip install --upgrade setuptools
 # pip install flexget
+# pip install transmissionrpc
 ```
 ===============================
 
